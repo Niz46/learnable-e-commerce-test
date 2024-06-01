@@ -1,0 +1,105 @@
+.details {
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-secondary);
+  padding: var(--pad);
+}
+
+.details-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-content .icon-txt {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.txt {
+  font-size: 14px;
+  color: var(--bg-primary);
+  cursor: pointer;
+}
+
+.icon-txt .icon {
+  margin: 0 10px;
+  width: 16px;
+  height: 16px;
+  color: var(--bg-primary);
+  cursor: pointer;
+}
+
+
+.icons span {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.24px;
+  position: absolute;
+  margin-left: 2px;
+}
+.navbar {
+  width: 100%;
+  min-height: 60px;
+  padding: var(--pad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .navItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+}
+
+.navItem .navList {
+  display: flex;
+}
+
+.navList li a {
+  color: var(--color-primary);
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+.navItem .user_auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-btn-txt);
+}
+
+.user_auth .btn {
+  margin-right: 15px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 14px;
+}
+
+.btn .icon {
+  margin-right: 10px;
+}
+
+.user_auth .icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 20px;
+}
+
+@media (max-width: 450px) and (min-width: 100px) {
+  .details {
+    display: none;
+  }
+  .navbar {
+    width: 100%;
+  }
+}
