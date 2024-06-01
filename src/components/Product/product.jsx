@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../features/productsSlice";
+import ProductCart from "../ui/cartproduct";
 import styles from "../../styles/product.module.css";
 
 function Product() {
-  const INITIAL_DISPLAY_COUNT = 10;
+  const INITIAL_DISPLAY_COUNT = 9;
   const [displayCount, setDisplayCount] = useState(INITIAL_DISPLAY_COUNT);
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
@@ -18,11 +19,11 @@ function Product() {
   }, [productStatus, dispatch]);
 
   const showMore = () => {
-    setDisplayCount(displayCount + 5);
+    setDisplayCount(displayCount + 3);
   };
 
   const showLess = () => {
-    setDisplayCount(Math.max(displayCount - 5, INITIAL_DISPLAY_COUNT));
+    setDisplayCount(Math.max(displayCount - 3, INITIAL_DISPLAY_COUNT));
   };
 
   if (productStatus === "loading") {
@@ -41,18 +42,8 @@ function Product() {
         <p>Problems trying to resolve the conflict between</p>
       </div>
       <div className={styles["product-content"]}>
-        {products.slice(0, displayCount).map((product, index) => (
-          <div key={index} className={styles["product-items"]}>
-            <img src={product.thumbnail} alt={`Product ${index + 1}`} />
-            <div className={styles.txt}>
-              <h4>{product.category}</h4>
-              <p className={styles.p}>{product.brand}</p>
-              <div className={styles["product-number"]}>
-                <p>{product.price}</p>
-                <span>{product.discountPercentage}</span>
-              </div>
-            </div>
-          </div>
+        {products.slice(0, displayCount).map((product) => (
+          <ProductCart key={product.id} product={product} />
         ))}
 
         <div className={styles.btn}>

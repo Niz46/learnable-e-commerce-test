@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../features/productsSlice";
 import styles from "../../styles/shopproduct.module.css";
+import ProductCart from "../ui/cartproduct";
 
 function Product() {
   const dispatch = useDispatch();
@@ -29,17 +30,9 @@ function Product() {
         <h3>BESTSELLER PRODUCTS</h3>
       </div>
       <div className={styles["product-content"]}>
-        {products.slice(0, 8).map((product, index) => (
-          <div key={index} className={styles["product-items"]}>
-            <img src={product.thumbnail} alt={`Product ${index + 1}`} />
-            <div className={styles.txt}>
-              <h4>{product.category}</h4>
-              <p className={styles.p}>{product.brand}</p>
-              <div className={styles["product-number"]}>
-                <p>{product.price}</p>
-                <span>{product.discountPercentage}</span>
-              </div>
-            </div>
+        {products.slice(0, 6).map((product) => (
+          <div key={product.id} className={styles["product-items"]}>
+            <ProductCart product={product} />
           </div>
         ))}
       </div>

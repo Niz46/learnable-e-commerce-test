@@ -139,8 +139,8 @@
 }
 
 .add-quantity input[type="number"] {
-  width: 40%;
-  padding: 10px 0 10px 15px;
+  width: 45%;
+  padding: 10px 0 10px 7.5px;
 }
 
 .price-quantity {
@@ -156,6 +156,7 @@
   font-weight: 500;
   line-height: 22.4px;
   letter-spacing: 0.002em;
+  cursor: pointer;
 }
 
 .price-quantity p {

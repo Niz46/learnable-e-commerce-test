@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { FiInstagram, FiPhone } from "react-icons/fi";
-import { TfiEmail } from "react-icons/tfi";
-import styles from "../../styles/navbar.module.css";
+import { FiInstagram, FiPhone, FiMail } from "react-icons/fi";
 import {
   FaAngleDown,
   FaFacebook,
@@ -15,6 +13,7 @@ import {
 import { BsCart } from "react-icons/bs";
 import { getTotals } from "../../features/cartSlice";
 import { Link } from "react-router-dom";
+import styles from "../../styles/navbar.module.css";
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -33,7 +32,7 @@ function Navbar() {
             <h6 className={styles.txt}>(704) 787-2574</h6>
           </div>
           <div className={styles["icon-txt"]}>
-            <TfiEmail className={styles.icon} />
+            <FiMail className={styles.icon} />
             <h6 className={styles.txt}>favournzeh1@gmail.com</h6>
           </div>
         </div>
@@ -62,7 +61,7 @@ function Navbar() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="shop">
+              <Link to="/shop">
                 Shop <FaAngleDown className={styles.arrow} />
               </Link>
             </li>

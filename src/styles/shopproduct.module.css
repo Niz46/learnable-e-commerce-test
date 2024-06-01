@@ -5,22 +5,21 @@
   width: 100%;
   margin-top: 2rem;
   padding: 30px 0;
-  position: relative;
 }
 
 .product-content {
   width: 100%;
-  max-width: 1124px;
+  max-width: 1204px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 4rem;
 }
 
 .product-txt {
   display: flex;
-  width: 72%;
+  width: 70%;
   align-content: flex-start;
   margin-bottom: 2rem;
   padding-bottom: 2rem;
@@ -59,12 +58,10 @@
   background: #faf9f9;
   width: calc(25% - 30px);
   box-sizing: border-box;
-  text-align: center;
 }
 
 .product-items img {
   width: 100%;
-  max-width: 200px;
   height: auto;
 }
 
