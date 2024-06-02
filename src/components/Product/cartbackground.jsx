@@ -27,6 +27,10 @@ function CartBackground() {
     }
   };
 
+  const handleCloseSuccess = () => {
+    setShowSuccess(false);
+  };
+
   if (!product) {
     return <div>Loading...</div>;
   }
@@ -41,7 +45,9 @@ function CartBackground() {
         <h3>${product.price}</h3>
         <button onClick={handleAddToCart}>ADD TO CART</button>
       </div>
-      {showSuccess && <SuccessSection product={product} />}
+      {showSuccess && (
+        <SuccessSection product={product} onClose={handleCloseSuccess} />
+      )}
     </div>
   );
 }

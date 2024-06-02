@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FiInstagram, FiPhone, FiMail } from "react-icons/fi";
+import PropTypes from "prop-types";
 import {
   FaAngleDown,
   FaFacebook,
@@ -15,13 +16,118 @@ import { getTotals } from "../../features/cartSlice";
 import { Link } from "react-router-dom";
 import styles from "../../styles/navbar.module.css";
 
+const HamburgerMenu = ({ toggleMenu, isOpen, cartTotalQuantity }) => (
+  <div className={styles.hamburgerMenu}>
+    <div
+      className={`${styles.hamburgerIcon} ${isOpen ? styles.open : ""}`}
+      onClick={toggleMenu}
+    >
+      <div className={styles.bar}></div>
+      <div className={styles.bar}></div>
+      <div className={styles.bar}></div>
+    </div>
+    <nav className={`${styles.navMenu} ${isOpen ? styles.open : ""}`}>
+      <ul>
+        <li>
+          <Link to="/" onClick={toggleMenu}>
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to="/shop" onClick={toggleMenu}>
+            Shop
+          </Link>
+        </li>
+        <li>
+          <a href="#" onClick={toggleMenu}>
+            About
+          </a>
+        </li>
+        <li>
+          <a href="#" onClick={toggleMenu}>
+            Blog
+          </a>
+        </li>
+        <li>
+          <a href="#" onClick={toggleMenu}>
+            Contact
+          </a>
+        </li>
+        <li>
+          <a href="#" onClick={toggleMenu}>
+            Pages
+          </a>
+        </li>
+        <li>
+          <a
+            href=""
+            style={{
+              color: "#23a6f0",
+            }}
+          >
+            <FaRegUser className={styles.icon} />
+            Login / Register
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <FaSearch
+              className={styles.icon}
+              style={{
+                color: "#23A6F0",
+              }}
+            />
+          </a>
+        </li>
+        <li>
+          <Link to="/cart" style={{ color: "#23A6F0" }}>
+            <BsCart className={styles.icon} />
+            {cartTotalQuantity > 0 && (
+              <span
+                className={styles.cartCount}
+                style={{
+                  fontSize: "10px",
+                }}
+              >
+                {cartTotalQuantity}
+              </span>
+            )}
+          </Link>
+        </li>
+        <li>
+          <a href="">
+            <FaRegHeart
+              className={styles.icon}
+              style={{
+                color: "#23A6F0",
+              }}
+            />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+);
+
+HamburgerMenu.propTypes = {
+  toggleMenu: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  cartTotalQuantity: PropTypes.number.isRequired,
+};
+
 function Navbar() {
   const dispatch = useDispatch();
-  const { cartTotalQuantity } = useSelector((state) => state.cart);
+  const cartTotalQuantity = useSelector((state) => state.cart.cartTotalQuantity);
 
   useEffect(() => {
     dispatch(getTotals());
-  }, [dispatch]);
+  }, [dispatch, cartTotalQuantity]);
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <header>
@@ -97,6 +203,15 @@ function Navbar() {
             </div>
           </div>
         </div>
+      </nav>
+
+      <nav className={styles.navbar_2}>
+        <h3 className={styles.logo}>Bandage</h3>
+        <HamburgerMenu
+          isOpen={isOpen}
+          toggleMenu={toggleMenu}
+          cartTotalQuantity={cartTotalQuantity}
+        />
       </nav>
     </header>
   );
