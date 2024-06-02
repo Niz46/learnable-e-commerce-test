@@ -14,7 +14,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
+  /* gap: 4rem; */
 }
 
 .product-txt {
@@ -55,7 +55,6 @@
   align-items: center;
   padding: 20px;
   border-radius: 8px;
-  background: #faf9f9;
   width: calc(25% - 30px);
   box-sizing: border-box;
 }

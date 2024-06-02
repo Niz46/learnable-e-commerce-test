@@ -5,7 +5,7 @@ import ProductCart from "../ui/cartproduct";
 import styles from "../../styles/product.module.css";
 
 function Product() {
-  const INITIAL_DISPLAY_COUNT = 9;
+  const INITIAL_DISPLAY_COUNT = 8;
   const [displayCount, setDisplayCount] = useState(INITIAL_DISPLAY_COUNT);
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
@@ -19,11 +19,11 @@ function Product() {
   }, [productStatus, dispatch]);
 
   const showMore = () => {
-    setDisplayCount(displayCount + 3);
+    setDisplayCount(displayCount + 4);
   };
 
   const showLess = () => {
-    setDisplayCount(Math.max(displayCount - 3, INITIAL_DISPLAY_COUNT));
+    setDisplayCount(Math.max(displayCount - 4, INITIAL_DISPLAY_COUNT));
   };
 
   if (productStatus === "loading") {

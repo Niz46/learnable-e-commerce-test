@@ -30,7 +30,7 @@ function Product() {
         <h3>BESTSELLER PRODUCTS</h3>
       </div>
       <div className={styles["product-content"]}>
-        {products.slice(0, 6).map((product) => (
+        {products.slice(0, 8).map((product) => (
           <div key={product.id} className={styles["product-items"]}>
             <ProductCart product={product} />
           </div>
