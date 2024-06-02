@@ -1,13 +1,26 @@
 import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../features/cartSlice";
+import { addToWishlist } from "../../features/wishListSlice";
 import styles from "../../styles/cartproduct.module.css";
 import star from "../../assets/Group 5.svg";
 import { FaRegHeart } from "react-icons/fa";
 import { LuGitCompare } from "react-icons/lu";
 
 const ProductCart = ({ product }) => {
+  const dispatch = useDispatch();
+
   if (!product) {
     return <div>Product data is missing</div>;
   }
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+  };
+
+  const handleAddToWishlist = () => {
+    dispatch(addToWishlist(product));
+  };
 
   return (
     <div className={styles["productCart-Container"]}>
@@ -23,7 +36,7 @@ const ProductCart = ({ product }) => {
             <div className={styles.share}>
               <LuGitCompare />
             </div>
-            <div className={styles.share}>
+            <div className={styles.share} onClick={handleAddToWishlist}>
               <FaRegHeart />
             </div>
           </div>
@@ -46,7 +59,7 @@ const ProductCart = ({ product }) => {
       </div>
 
       <div className={styles["productCart-content-3"]}>
-        <button>ADD TO BASKET</button>
+        <button onClick={handleAddToCart}>ADD TO BASKET</button>
       </div>
     </div>
   );

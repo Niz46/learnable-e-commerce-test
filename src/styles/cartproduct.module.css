@@ -7,7 +7,7 @@
   flex-direction: column;
   overflow: hidden;
   background: #ffffff;
-  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.07);
+  /* box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.07); */
 }
 
 .productCart-content-1 {
@@ -83,6 +83,9 @@
 .likeShare-Container p {
   padding-left: 20px;
   color: red;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
 }
 
 .likeShare-Container .likeShare-icon {

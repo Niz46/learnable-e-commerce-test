@@ -16,7 +16,7 @@ import { getTotals } from "../../features/cartSlice";
 import { Link } from "react-router-dom";
 import styles from "../../styles/navbar.module.css";
 
-const HamburgerMenu = ({ toggleMenu, isOpen, cartTotalQuantity }) => (
+const HamburgerMenu = ({ toggleMenu, isOpen, cartTotalQuantity, wishlistTotalQuantity }) => (
   <div className={styles.hamburgerMenu}>
     <div
       className={`${styles.hamburgerIcon} ${isOpen ? styles.open : ""}`}
@@ -102,6 +102,16 @@ const HamburgerMenu = ({ toggleMenu, isOpen, cartTotalQuantity }) => (
                 color: "#23A6F0",
               }}
             />
+            {wishlistTotalQuantity > 0 && (
+              <span
+                className={styles.wishlistCount}
+                style={{
+                  fontSize: "10px",
+                }}
+              >
+                {wishlistTotalQuantity}
+              </span>
+            )}
           </a>
         </li>
       </ul>
@@ -113,11 +123,13 @@ HamburgerMenu.propTypes = {
   toggleMenu: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
   cartTotalQuantity: PropTypes.number.isRequired,
+  wishlistTotalQuantity: PropTypes.number.isRequired,
 };
 
 function Navbar() {
   const dispatch = useDispatch();
   const cartTotalQuantity = useSelector((state) => state.cart.cartTotalQuantity);
+  const wishlistTotalQuantity = useSelector((state) => state.wishlist.wishlistItems.length);
 
   useEffect(() => {
     dispatch(getTotals());
@@ -200,6 +212,9 @@ function Navbar() {
                 <span className={styles.cartCount}>{cartTotalQuantity}</span>
               )}
               <FaRegHeart className={styles.icon} />
+              {wishlistTotalQuantity > 0 && (
+                <span className={styles.wishlistCount}>{wishlistTotalQuantity}</span>
+              )}
             </div>
           </div>
         </div>
@@ -211,6 +226,7 @@ function Navbar() {
           isOpen={isOpen}
           toggleMenu={toggleMenu}
           cartTotalQuantity={cartTotalQuantity}
+          wishlistTotalQuantity={wishlistTotalQuantity}
         />
       </nav>
     </header>
