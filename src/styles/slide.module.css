@@ -216,6 +216,9 @@
   .showMore{
     display: none;
   }
+  .showPrev{
+    display: none;
+  }
 }
 
 @media (max-width: 565px) {
