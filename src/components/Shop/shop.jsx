@@ -1,9 +1,9 @@
 import Navbar from "../Navbar/navbar";
 import Carddisplay from "./shopDetails";
-import ArticleSection from "./ShopDisplay";
+import ArticleSection from "./shopDisplay";
 import Footer from "../Footer/footer"
 import SponsorSection from "./sponsor";
-import ShopProduct from "./shopProduct";
+import ShopProduct from "./showItem";
 
 
 function Shop() {

@@ -1,6 +1,6 @@
 import Footer from "../Footer/footer";
 import Navbar from "../Navbar/navbar";
-import ShopProduct from "../Shop/shopProduct";
+import ShopProduct from "../Shop/showItem";
 import CartSection from "./addcart";
 
 
