@@ -56,7 +56,10 @@ const ProductCart = ({ product }) => {
       <div className={styles["productCart-content-2"]}>
         <h4>{product.brand}</h4>
         <p className={styles.text}>{product.title}</p>
-        <p className={styles.priceTag}>€ {product.price}</p>
+        <div className={styles.txt}>
+          <p className={styles.priceTag}>$ {product.price}</p>
+          <p className={styles.priceTag2}>$ {product.discountPercentage}</p>
+        </div>
 
         <div className={styles.icons}>
           <img src={star} alt="Star rating" />

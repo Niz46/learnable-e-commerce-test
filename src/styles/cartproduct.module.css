@@ -127,6 +127,15 @@
   color: #1b1b1b;
 }
 
+.productCart-content-2 .txt {
+  display: flex;
+  gap: 10px;
+}
+
+.productCart-content-2 .priceTag2 {
+  display: none;
+}
+
 .productCart-content-2 .icons {
   display: flex;
   align-items: center;
@@ -198,4 +207,25 @@
   border-radius: 20px;
   background: #fbf9f9;
   z-index: 1000;
+}
+
+.productCart-Container:hover .productCart-content-2 .priceTag2 {
+  display: block;
+  font-family: Rubik;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  margin-top: 20px;
+  color: #1b1b1b;
+}
+
+.productCart-Container:hover .productCart-content-2 .priceTag {
+  font-family: Rubik;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  margin-top: 20px;
+  color: #606060; 
+  text-decoration: line-through;
+  opacity: 0.5;
 }
