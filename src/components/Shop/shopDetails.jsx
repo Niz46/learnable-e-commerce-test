@@ -6,6 +6,7 @@ import { fetchProducts } from "../../features/productsSlice";
 import star from "../../assets/stars.svg";
 import styles from "../../styles/carddisplay.module.css";
 import Button from "../../components/ui/button";
+import { Link } from "react-router-dom";
 
 const BATCH_SIZE = 1; 
 
@@ -56,9 +57,9 @@ function Carddisplay() {
       <div className={styles["hero-mainContainer"]}>
         <div className={styles["shop-links"]}>
           <nav>
-            <a href="#" className={styles["home"]}>
+            <Link to="/" className={styles["home"]}>
               Home
-            </a>
+            </Link>
             <FaAngleRight />
             <a href="#" className={styles["shop"]}>
               Shop

@@ -220,7 +220,7 @@
   .image-content .left-icon {
     position: absolute;
     top: 40%;
-    left: 10%;
+    left: 7%;
     font-size: 50px;
     color: #cdc8c8;
     cursor: pointer;
@@ -229,7 +229,7 @@
   .image-content .right-icon {
     position: absolute;
     top: 40%;
-    right: 10%;
+    right: 7%;
     font-size: 50px;
     color: #cdc8c8;
     cursor: pointer;
