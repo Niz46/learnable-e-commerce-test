@@ -5,8 +5,7 @@ import { BsCart } from "react-icons/bs";
 import { fetchProducts } from "../../features/productsSlice";
 import star from "../../assets/stars.svg";
 import styles from "../../styles/carddisplay.module.css";
-import LoadMoreButton from "../ui/button";
-import { Link } from "react-router-dom";
+import Button from "../../components/ui/button";
 
 const BATCH_SIZE = 1; 
 
@@ -57,9 +56,9 @@ function Carddisplay() {
       <div className={styles["hero-mainContainer"]}>
         <div className={styles["shop-links"]}>
           <nav>
-            <Link to="/" className={styles["home"]}>
+            <a href="#" className={styles["home"]}>
               Home
-            </Link>
+            </a>
             <FaAngleRight />
             <a href="#" className={styles["shop"]}>
               Shop
@@ -121,7 +120,7 @@ function Carddisplay() {
                   ))}
                 </div>
                 <div className={styles["button-options"]}>
-                  <LoadMoreButton
+                  <Button
                     style={{
                       backgroundColor: selectedColor
                         ? selectedColor
@@ -130,7 +129,7 @@ function Carddisplay() {
                     onClick={applyThemeColor}
                   >
                     Select Options
-                  </LoadMoreButton>
+                  </Button>
                   <div className={styles["select-icons"]}>
                     <FaRegHeart />
                     <BsCart />

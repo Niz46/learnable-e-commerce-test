@@ -85,7 +85,7 @@ ProductCart.propTypes = {
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     discountPercentage: PropTypes.number.isRequired,
-    brand: PropTypes.string, // Removed isRequired
+    brand: PropTypes.string, 
     price: PropTypes.number.isRequired,
     rating: PropTypes.number.isRequired,
     stock: PropTypes.number.isRequired,

@@ -73,7 +73,6 @@
   cursor: pointer;
 }
 
-
 .image-content .right-icon {
   position: absolute;
   top: 40%;
@@ -218,4 +217,22 @@
   .hero-content-2 .line{
     margin-top: 55%;
   }
+  .image-content .left-icon {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    font-size: 50px;
+    color: #cdc8c8;
+    cursor: pointer;
+  }
+  
+  .image-content .right-icon {
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    font-size: 50px;
+    color: #cdc8c8;
+    cursor: pointer;
+  }
+  
 }
