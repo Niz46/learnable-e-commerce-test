@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../features/cartSlice";
 import { addToWishlist } from "../../features/wishListSlice";
@@ -7,9 +8,11 @@ import star from "../../assets/Group 5.svg";
 import { FaRegHeart } from "react-icons/fa";
 import { LuGitCompare } from "react-icons/lu";
 import Button from "./button";
+import SuccessSection from "./productToast";
 
 const ProductCart = ({ product }) => {
   const dispatch = useDispatch();
+  const [showSuccess, setShowSuccess] = useState(false);
 
   if (!product) {
     return <div>Product data is missing</div>;
@@ -17,10 +20,16 @@ const ProductCart = ({ product }) => {
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
+    setShowSuccess(true);
+    setTimeout(() => setShowSuccess(false), 4000);
   };
 
   const handleAddToWishlist = () => {
     dispatch(addToWishlist(product));
+  };
+
+  const handleCloseSuccess = () => {
+    setShowSuccess(false);
   };
 
   return (
@@ -62,6 +71,9 @@ const ProductCart = ({ product }) => {
       <div className={styles["productCart-content-3"]}>
         <Button onClick={handleAddToCart}>ADD TO BASKET</Button>
       </div>
+      {showSuccess && (
+        <SuccessSection product={product} onClose={handleCloseSuccess} />
+      )}
     </div>
   );
 };

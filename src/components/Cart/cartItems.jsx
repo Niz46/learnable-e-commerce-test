@@ -4,7 +4,7 @@ import { fetchProducts } from "../../features/productsSlice";
 import Product from "../ui/product";
 import styles from "../../styles/shopproduct.module.css";
 
-function ShopProduct() {
+function CartItems() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
   const productStatus = useSelector((state) => state.products.status);
@@ -25,7 +25,7 @@ function ShopProduct() {
   return (
     <div className={styles.products}>
       <div className={styles["products-txt"]}>
-      <h3>BESTSELLERS PRODUCTS</h3>
+        <h3>PRODUCTS RELATED TO ITEMS IN YOUR CART</h3>
       </div>
       <Product
         products={products.slice(0, INITIAL_DISPLAY_COUNT)}
@@ -37,4 +37,4 @@ function ShopProduct() {
   );
 }
 
-export default ShopProduct;
+export default CartItems;

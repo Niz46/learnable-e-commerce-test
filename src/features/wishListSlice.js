@@ -19,11 +19,13 @@ const wishlistSlice = createSlice({
       if (existingIndex >= 0) {
         toast.info("Product already in wishlist", {
           position: "bottom-left",
+          className: "toast-info"
         });
       } else {
         state.wishlistItems.push(action.payload);
         toast.success("Product added to wishlist", {
           position: "bottom-left",
+          className: "toast-success"
         });
       }
       localStorage.setItem("wishlistItems", JSON.stringify(state.wishlistItems));
@@ -35,6 +37,7 @@ const wishlistSlice = createSlice({
       localStorage.setItem("wishlistItems", JSON.stringify(state.wishlistItems));
       toast.error("Product removed from wishlist", {
         position: "bottom-left",
+        className: "toast-error"
       });
     },
   },

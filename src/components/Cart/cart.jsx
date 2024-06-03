@@ -1,6 +1,6 @@
 import Footer from "../Footer/footer";
 import Navbar from "../Navbar/navbar";
-import ShopProduct from "../Shop/showItem";
+import CartItems from "./cartItems";
 import CartSection from "./addcart";
 
 
@@ -10,7 +10,7 @@ function Cart() {
     <>
       <Navbar />
       <CartSection />
-      <ShopProduct />
+      <CartItems />
       <Footer />
     </>
   )

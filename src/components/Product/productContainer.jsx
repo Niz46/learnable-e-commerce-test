@@ -28,10 +28,6 @@ function ProductContainer() {
     setDisplayCount(Math.max(displayCount - 4, INITIAL_DISPLAY_COUNT));
   };
 
-  if (productStatus === "loading") {
-    return <div>Loading...</div>;
-  }
-
   if (productStatus === "failed") {
     return <div>Error: {error}</div>;
   }

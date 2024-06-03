@@ -16,7 +16,12 @@ import { getTotals } from "../../features/cartSlice";
 import { Link } from "react-router-dom";
 import styles from "../../styles/navbar.module.css";
 
-const HamburgerMenu = ({ toggleMenu, isOpen, cartTotalQuantity, wishlistTotalQuantity }) => (
+const HamburgerMenu = ({
+  toggleMenu,
+  isOpen,
+  cartTotalQuantity,
+  wishlistTotalQuantity,
+}) => (
   <div className={styles.hamburgerMenu}>
     <div
       className={`${styles.hamburgerIcon} ${isOpen ? styles.open : ""}`}
@@ -60,7 +65,7 @@ const HamburgerMenu = ({ toggleMenu, isOpen, cartTotalQuantity, wishlistTotalQua
         </li>
         <li>
           <a
-            href=""
+            href="#"
             style={{
               color: "#23a6f0",
             }}
@@ -70,7 +75,7 @@ const HamburgerMenu = ({ toggleMenu, isOpen, cartTotalQuantity, wishlistTotalQua
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="#">
             <FaSearch
               className={styles.icon}
               style={{
@@ -95,7 +100,7 @@ const HamburgerMenu = ({ toggleMenu, isOpen, cartTotalQuantity, wishlistTotalQua
           </Link>
         </li>
         <li>
-          <a href="">
+          <a href="#">
             <FaRegHeart
               className={styles.icon}
               style={{
@@ -129,12 +134,16 @@ HamburgerMenu.propTypes = {
 
 function Navbar() {
   const dispatch = useDispatch();
-  const cartTotalQuantity = useSelector((state) => state.cart.cartTotalQuantity);
-  const wishlistTotalQuantity = useSelector((state) => state.wishlist.wishlistItems.length);
+  const cartTotalQuantity = useSelector(
+    (state) => state.cart.cartTotalQuantity
+  );
+  const wishlistTotalQuantity = useSelector(
+    (state) => state.wishlist.wishlistItems.length
+  );
 
   useEffect(() => {
     dispatch(getTotals());
-  }, [dispatch, cartTotalQuantity]);
+  }, [dispatch]);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -214,7 +223,9 @@ function Navbar() {
               )}
               <FaRegHeart className={styles.icon} />
               {wishlistTotalQuantity > 0 && (
-                <span className={styles.wishlistCount}>{wishlistTotalQuantity}</span>
+                <span className={styles.wishlistCount}>
+                  {wishlistTotalQuantity}
+                </span>
               )}
             </div>
           </div>
