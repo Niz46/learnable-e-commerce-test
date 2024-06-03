@@ -4,6 +4,7 @@ import { addToCart } from '../../features/cartSlice';
 import styles from '../../styles/cartbackground.module.css';
 import background from '../../assets/background.jpeg';
 import SuccessSection from '../ui/productToast';
+import Button from '../ui/button';
 
 function CartBackground() {
   const dispatch = useDispatch();
@@ -43,7 +44,7 @@ function CartBackground() {
         <h2>{product.title}</h2>
         <p className={styles["p-tag2"]}>{product.description}</p>
         <h3>${product.price}</h3>
-        <button onClick={handleAddToCart}>ADD TO CART</button>
+        <Button onClick={handleAddToCart}>ADD TO CART</Button>
       </div>
       {showSuccess && (
         <SuccessSection product={product} onClose={handleCloseSuccess} />

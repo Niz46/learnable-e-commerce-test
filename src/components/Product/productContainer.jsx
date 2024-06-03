@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../features/productsSlice";
 import Product from "../ui/product";
-import LoadMoreButton from "../ui/button";
+import Button from "../ui/button";
 import styles from "../../styles/productcontainer.module.css";
 
 function ProductContainer() {
@@ -47,14 +47,14 @@ function ProductContainer() {
       />
       <div className={styles.btn}>
         {displayCount < products.length && (
-          <LoadMoreButton onClick={showMore}>
+          <Button onClick={showMore}>
             LOAD MORE PRODUCT
-          </LoadMoreButton>
+          </Button>
         )}
         {displayCount > INITIAL_DISPLAY_COUNT && (
-          <LoadMoreButton onClick={showLess}>
+          <Button onClick={showLess}>
             SHOW LESS PRODUCT
-          </LoadMoreButton>
+          </Button>
         )}
       </div>
     </div>

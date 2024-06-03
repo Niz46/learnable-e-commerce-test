@@ -6,6 +6,7 @@ import styles from "../../styles/cartproduct.module.css";
 import star from "../../assets/Group 5.svg";
 import { FaRegHeart } from "react-icons/fa";
 import { LuGitCompare } from "react-icons/lu";
+import Button from "./button";
 
 const ProductCart = ({ product }) => {
   const dispatch = useDispatch();
@@ -59,7 +60,7 @@ const ProductCart = ({ product }) => {
       </div>
 
       <div className={styles["productCart-content-3"]}>
-        <button onClick={handleAddToCart}>ADD TO BASKET</button>
+        <Button onClick={handleAddToCart}>ADD TO BASKET</Button>
       </div>
     </div>
   );

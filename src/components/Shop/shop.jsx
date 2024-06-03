@@ -1,6 +1,6 @@
 import Navbar from "../Navbar/navbar";
 import Carddisplay from "./shopDetails";
-import ArticleSection from "./shopItemDisplay";
+import ArticleSection from "./ShopDisplay";
 import Footer from "../Footer/footer"
 import SponsorSection from "./sponsor";
 import ShopProduct from "./showItem";
