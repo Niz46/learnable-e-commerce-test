@@ -1,9 +1,9 @@
 import Navbar from "../Navbar/navbar";
-import Carddisplay from "./carddisplay";
-import ArticleSection from "./productdisplay";
-import Product from "./shopproduct";
+import Carddisplay from "./shopDetails";
+import ArticleSection from "./ShopDisplay";
 import Footer from "../Footer/footer"
 import SponsorSection from "./sponsor";
+import ShopProduct from "./shopProduct";
 
 
 function Shop() {
@@ -12,7 +12,7 @@ function Shop() {
       <Navbar />
       <Carddisplay />
       <ArticleSection />
-      <Product />
+      <ShopProduct />
       <SponsorSection />
       <Footer />
     </>

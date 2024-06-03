@@ -107,6 +107,7 @@ const HamburgerMenu = ({ toggleMenu, isOpen, cartTotalQuantity, wishlistTotalQua
                 className={styles.wishlistCount}
                 style={{
                   fontSize: "10px",
+                  color: "#23A6F0",
                 }}
               >
                 {wishlistTotalQuantity}

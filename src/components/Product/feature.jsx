@@ -9,7 +9,7 @@ function Feature() {
       <div className={styles.feature}>
         <div className={styles["featured-text"]}>
           <h4>Featured Products</h4>
-          <h3>BESTSELLER PRODUCTS</h3>
+          <h3>THE BEST SERVICES</h3>
           <p>Problems trying to resolve the conflict between</p>
         </div>
 

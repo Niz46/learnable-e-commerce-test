@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../features/productsSlice";
-import styles from "../../styles/productdisplay.module.css";
+import styles from "../../styles/shopdisplay.module.css";
 
 const ArticleSection = () => {
   const dispatch = useDispatch();

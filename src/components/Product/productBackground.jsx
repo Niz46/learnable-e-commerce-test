@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../../features/cartSlice';
 import styles from '../../styles/cartbackground.module.css';
 import background from '../../assets/background.jpeg';
-import SuccessSection from '../ui/carttoast';
+import SuccessSection from '../ui/productToast';
 
 function CartBackground() {
   const dispatch = useDispatch();

@@ -19,7 +19,6 @@ function Slide() {
     }
   }, [productStatus, dispatch]);
 
-
   const itemsPerBatch = 4;
   const start = batchIndex * itemsPerBatch;
   const end = start + itemsPerBatch;

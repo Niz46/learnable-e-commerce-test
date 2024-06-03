@@ -156,7 +156,6 @@
   font-weight: 500;
   line-height: 22.4px;
   letter-spacing: 0.002em;
-  cursor: pointer;
 }
 
 .price-quantity p {
@@ -222,6 +221,8 @@
   display: flex;
   gap: 5px;
   align-items: center;
+  cursor: pointer;
+  color: #23a6f0;
 }
 
 .cart-content-2 .line {
@@ -238,16 +239,16 @@
   border-bottom: 1px solid #b0adad;
 }
 
-.btn button{
-    width: 95%;
-    height: 56px;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    background: #23a6f0;
-    border: none;
-    color: #fff;
+.btn button {
+  width: 95%;
+  height: 56px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #23a6f0;
+  border: none;
+  color: #fff;
 }
 
 .summary-content h4 {
@@ -255,7 +256,7 @@
   font-weight: 500;
   line-height: 22.4px;
   letter-spacing: 0.002em;
-  color: #3A3C3E;
+  color: #3a3c3e;
 }
 
 .summary-content small {
@@ -273,7 +274,119 @@
   padding: 20px;
 }
 
-.pay-image{
-    display: flex;
-    gap: 15px;
+.pay-image {
+  display: flex;
+  gap: 15px;
 }
+
+@media (max-width: 1190px) {
+  .cart-container {
+    padding: 0 80px;
+  }
+
+  .item-container-2 .heroCart-Section {
+    display: flex;
+    align-items: center;
+    width: 650px;
+    justify-content: space-between;
+  }
+
+  .cart-container .cart-content-1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 1044px) {
+  .cart-container {
+    padding: 0;
+  }
+
+  .item-container-1 .item-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .item-container-1 .quantity-price {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .cart-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cart-container .cart-content-1 {
+    width: 100%;
+  }
+  .shop-links {
+    display: flex;
+    justify-content: center;
+  }
+
+  .shop-links .shop_1 {
+    color: #bdbdbd;
+  } 
+
+  .shop,
+  .shop-links .left-arrow {
+    display: none;
+  }
+  .cart-text p{
+    margin-top: 2.2rem;
+  }
+  .cart-content-2 {
+    width: 100%;
+  }
+  .cart-content-2 .btn {
+    border-bottom: none;
+  }
+  .item-container-2 .heroCart-Section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 314px;
+    gap: 0;
+    position: relative;
+  }
+  .price-quantity{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 22%;
+    left: 12%;
+  }
+  .price-quantity h4{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    letter-spacing: 0.002em; 
+  }
+  .pay-image{
+    display: none;
+  }
+  .heroCart-Section .add-quantity{
+    position: absolute;
+    bottom: -15%;
+    width: 40%;
+    right: 0;
+  }
+  .delete-container{
+    margin-bottom: 2rem;
+  }
+  .summary-content-1 p{
+    font-size: 14px;
+  }
+}
+

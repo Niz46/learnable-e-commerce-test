@@ -1,15 +1,17 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../features/productsSlice";
+import Product from "../ui/product";
 import styles from "../../styles/shopproduct.module.css";
-import ProductCart from "../ui/cartproduct";
 
-function Product() {
+function ShopProduct() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
   const productStatus = useSelector((state) => state.products.status);
   const error = useSelector((state) => state.products.error);
 
+  const INITIAL_DISPLAY_COUNT = 8;
+  
   useEffect(() => {
     if (productStatus === "idle") {
       dispatch(fetchProducts());
@@ -25,19 +27,18 @@ function Product() {
   }
 
   return (
-    <div className={styles.product}>
-      <div className={styles["product-txt"]}>
-        <h3>BESTSELLER PRODUCTS</h3>
+    <div className={styles.products}>
+      <div className={styles["products-txt"]}>
+        <h3>PRODUCTS RELATED TO ITEMS IN YOUR CART</h3>
       </div>
-      <div className={styles["product-content"]}>
-        {products.slice(0, 8).map((product) => (
-          <div key={product.id} className={styles["product-items"]}>
-            <ProductCart product={product} />
-          </div>
-        ))}
-      </div>
+      <Product
+        products={products.slice(0, INITIAL_DISPLAY_COUNT)}
+        title=""
+        subtitle=""
+        description=""
+      />
     </div>
   );
 }
 
-export default Product;
+export default ShopProduct;
