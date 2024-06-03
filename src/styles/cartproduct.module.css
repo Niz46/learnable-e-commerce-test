@@ -22,6 +22,7 @@
 .productCart-content-1::after {
   content: "";
   position: absolute;
+  background: #f7f7f7;
   left: 0;
   right: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -42,7 +43,7 @@
 }
 
 .productCart-content-1:hover img {
-  transform: scale(1.2);
+  transform: scale(1.15);
 }
 
 .productCart-content-1 h4 {
@@ -146,7 +147,7 @@
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+  transition: max-height 1s ease, opacity 1s ease;
   border-top: 1px solid black;
 }
 
@@ -195,6 +196,6 @@
   width: 40px;
   height: 40px;
   border-radius: 20px;
-  background: #ffffff;
+  background: #fbf9f9;
   z-index: 1000;
 }

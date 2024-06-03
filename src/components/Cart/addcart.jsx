@@ -15,6 +15,7 @@ import { LiaTimesSolid } from "react-icons/lia";
 import card from "../../assets/Mastercard - png.svg"
 import visa from "../../assets/Visa Inc. - png.svg"
 import paystack from "../../assets/Paystack - png.svg"
+import { Link } from "react-router-dom";
 
 const CartSection = () => {
   const dispatch = useDispatch();
@@ -48,9 +49,9 @@ const CartSection = () => {
     <div className={styles["cart-mainContainer"]}>
       <div className={styles["shop-links"]}>
         <nav>
-          <a href="#" className={styles["home"]}>
+          <Link to="/" className={styles["home"]}>
             Home
-          </a>
+          </Link>
           <FaAngleRight />
           <a href="#" className={styles["home"]}>
             Shop
@@ -59,6 +60,7 @@ const CartSection = () => {
             style={{
               color: "#BDBDBD",
             }}
+            className={styles.arrow}
           />
           <a href="#" className={styles["shop"]}>
             Shopping Cart

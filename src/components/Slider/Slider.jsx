@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../../features/productsSlice";
 import { nextSlide, prevSlide } from "../../features/apiSlice";
-import { FaAngleRight } from "react-icons/fa";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
 import styles from "../../styles/slide.module.css";
 
@@ -12,9 +12,9 @@ function Slide() {
   const productStatus = useSelector((state) => state.products.status);
   const batchIndex = useSelector((state) => state.slider.value);
   const error = useSelector((state) => state.products.error);
-  
+
   useEffect(() => {
-    if (productStatus === 'idle') {
+    if (productStatus === "idle") {
       dispatch(fetchProducts());
     }
   }, [productStatus, dispatch]);
@@ -25,22 +25,22 @@ function Slide() {
   const displayedProducts = products.slice(start, end);
 
   const showNextBatch = () => {
-    if((batchIndex + 1) * itemsPerBatch < products.length){
-      dispatch(nextSlide())
+    if ((batchIndex + 1) * itemsPerBatch < products.length) {
+      dispatch(nextSlide());
     }
   };
 
   const showPrev = () => {
-    if(batchIndex > 0){
-      dispatch(prevSlide())
+    if (batchIndex > 0) {
+      dispatch(prevSlide());
     }
-  }; 
+  };
 
-  if (productStatus === 'loading') {
+  if (productStatus === "loading") {
     return <div>Loading...</div>;
   }
 
-  if (productStatus === 'failed') {
+  if (productStatus === "failed") {
     return <div>Error: {error}</div>;
   }
 
@@ -73,6 +73,9 @@ function Slide() {
           <GoDotFill />
         </button>
       </div>
+      <button onClick={showPrev} className={styles.showPrev}>
+        <FaAngleLeft />
+      </button>
       {(batchIndex + 1) * itemsPerBatch < products.length && (
         <button onClick={showNextBatch} className={styles.showMore}>
           <FaAngleRight />

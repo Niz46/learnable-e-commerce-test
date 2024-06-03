@@ -333,7 +333,11 @@
 
   .shop-links .shop_1 {
     color: #bdbdbd;
-  } 
+  }
+  
+  .shop-links .home:nth-child(3){
+    color: #b0adad;
+  }
 
   .shop,
   .shop-links .left-arrow {
@@ -365,7 +369,10 @@
     justify-content: center;
     position: absolute;
     top: 22%;
-    left: 16%;
+    left: 15%;
+  }
+  .arrow{
+    display: none;
   }
   .price-quantity h4{
     font-size: 14px;
