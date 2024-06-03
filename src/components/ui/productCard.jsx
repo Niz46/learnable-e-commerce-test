@@ -1,14 +1,14 @@
-import PropTypes from "prop-types";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../features/cartSlice";
-import { addToWishlist } from "../../features/wishListSlice";
-import styles from "../../styles/cartproduct.module.css";
-import star from "../../assets/Group 5.svg";
-import { FaRegHeart } from "react-icons/fa";
-import { LuGitCompare } from "react-icons/lu";
-import Button from "./button";
-import SuccessSection from "./productToast";
+import PropTypes from 'prop-types';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../features/cartSlice';
+import { addToWishlist } from '../../features/wishListSlice';
+import styles from '../../styles/cartproduct.module.css';
+import star from '../../assets/Group 5.svg';
+import { FaRegHeart } from 'react-icons/fa';
+import { LuGitCompare } from 'react-icons/lu';
+import Button from './button';
+import SuccessSection from './productToast';
 
 const ProductCart = ({ product }) => {
   const dispatch = useDispatch();
@@ -33,16 +33,16 @@ const ProductCart = ({ product }) => {
   };
 
   return (
-    <div className={styles["productCart-Container"]}>
-      <div className={styles["productCart-content-1"]}>
+    <div className={styles['productCart-Container']}>
+      <div className={styles['productCart-content-1']}>
         <img src={product.thumbnail} alt={product.title} />
 
         <h4>{product.category}</h4>
 
-        <div className={styles["likeShare-Container"]}>
+        <div className={styles['likeShare-Container']}>
           <p>{product.discountPercentage}%</p>
 
-          <div className={styles["likeShare-icon"]}>
+          <div className={styles['likeShare-icon']}>
             <div className={styles.share}>
               <LuGitCompare />
             </div>
@@ -53,8 +53,8 @@ const ProductCart = ({ product }) => {
         </div>
       </div>
 
-      <div className={styles["productCart-content-2"]}>
-        <h4>{product.brand}</h4>
+      <div className={styles['productCart-content-2']}>
+        <h4>{product.brand || 'Unknown Brand'}</h4>
         <p className={styles.text}>{product.title}</p>
         <div className={styles.txt}>
           <p className={styles.priceTag}>$ {product.price}</p>
@@ -62,21 +62,19 @@ const ProductCart = ({ product }) => {
         </div>
 
         <div className={styles.icons}>
-          <img src={star} alt="Star rating" />
+          <img src={star} alt='Star rating' />
 
-          <div className={styles["rate-number"]}>
+          <div className={styles['rate-number']}>
             <span>{product.rating}</span>
             <span>({product.stock})</span>
           </div>
         </div>
       </div>
 
-      <div className={styles["productCart-content-3"]}>
+      <div className={styles['productCart-content-3']}>
         <Button onClick={handleAddToCart}>ADD TO BASKET</Button>
       </div>
-      {showSuccess && (
-        <SuccessSection product={product} onClose={handleCloseSuccess} />
-      )}
+      {showSuccess && <SuccessSection product={product} onClose={handleCloseSuccess} />}
     </div>
   );
 };
@@ -87,7 +85,7 @@ ProductCart.propTypes = {
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     discountPercentage: PropTypes.number.isRequired,
-    brand: PropTypes.string.isRequired,
+    brand: PropTypes.string, // Removed isRequired
     price: PropTypes.number.isRequired,
     rating: PropTypes.number.isRequired,
     stock: PropTypes.number.isRequired,
